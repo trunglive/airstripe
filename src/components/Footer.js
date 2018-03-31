@@ -9,7 +9,7 @@ const Footer = () => (
       <span>&copy; 2017 | Legal</span>
     </NavLink>
 
-    <div classNam="social-and-lang-group">
+    <div className="social-and-lang-group">
       <span className="social-icon">
         <img src="icons/facebook.svg" />
         <img src="icons/twitter.svg" />

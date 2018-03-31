@@ -1,10 +1,10 @@
 export const defaultData = [
   {
-    id: "wADHzRXpEI6ECPKwarwFd10P",
     class: "economy",
     destination: "Amsterdam",
     title: "Flash Trip to Amsterdam",
     description: "The unique travel experience",
+    imageUrl: 'https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto_1.jpeg?alt=media&token=9b2fd041-744f-4a6f-94fb-07d0683f7904',
     totalSeat: 180,
     currentBid: 50,
     favorite: false,
@@ -24,11 +24,11 @@ export const defaultData = [
     }
   },
   {
-    id: "DDTM7biFAC4efAFAdJNE10yH",
     class: "business",
     destination: "London",
     title: "Visit London",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto_2.jpeg?alt=media&token=f6ace73a-339f-43e1-804a-8f78c226a138",
     totalSeat: 180,
     currentBid: 10,
     favorite: false,
@@ -48,11 +48,11 @@ export const defaultData = [
     }
   },
   {
-    id: "pD9nljmwlostJVC59pQXml91",
     class: "first class",
     destination: "Milan",
     title: "Fun Grill Sizzle",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto-3.jpeg?alt=media&token=c8309b68-908b-4ed4-af1d-d4b731b50ba9",
     totalSeat: 180,
     currentBid: 12,
     favorite: false,
@@ -72,11 +72,11 @@ export const defaultData = [
     }
   },
   {
-    id: "F2YWPJhzuLEGJkWeb8tDJzTa",
     class: "economy",
     destination: "Paris",
     title: "Meet the city of lights",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto-4.jpeg?alt=media&token=519be31c-8d94-4df8-9ecf-8bc1c9fa62ec",
     totalSeat: 180,
     currentBid: 17,
     favorite: false,
@@ -96,11 +96,11 @@ export const defaultData = [
     }
   },
   {
-    id: "nj1OZNMlTEqegFAq7jBpfyeX",
     class: "business",
     destination: "Seville",
     title: "Fitness Flight",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto-5.jpeg?alt=media&token=ae0b9feb-e9a4-4f31-b3cb-205caaf3432c",
     totalSeat: 180,
     currentBid: 90,
     favorite: false,
@@ -120,11 +120,11 @@ export const defaultData = [
     }
   },
   {
-    id: "v7p7bPGULvHJK8sbPYd57MKP",
     class: "first class",
     destination: "London",
     title: "Rockin the clouds",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto-6.jpeg?alt=media&token=38af6b6b-2525-425d-aa9b-0342309def67",
     totalSeat: 180,
     currentBid: 97,
     favorite: false,
@@ -144,11 +144,11 @@ export const defaultData = [
     }
   },
   {
-    id: "xENCktqp0Sl73zYBWeXwXSqT",
     class: "economy",
     destination: "Paris",
     title: "From the plane to the club",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto-7.jpeg?alt=media&token=3902c9be-a1c1-445f-b5f5-d8d7b30e3650",
     totalSeat: 180,
     currentBid: 107,
     favorite: false,
@@ -168,11 +168,11 @@ export const defaultData = [
     }
   },
   {
-    id: "Jv17IDGYjRIPe32odGoyRUP6",
     class: "business",
     destination: "London",
     title: "Secret Sky Concert",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto-8.jpeg?alt=media&token=b03b9c7f-925b-4f2d-b6c1-7e4dd1f185ac",
     totalSeat: 180,
     currentBid: 23,
     favorite: false,
@@ -192,11 +192,11 @@ export const defaultData = [
     }
   },
   {
-    id: "IaDCIoiKtnVXEMdSd73Y2ZwF",
     class: "first class",
     destination: "Rome",
     title: "The Roman Flight",
     description: "The unique travel experience",
+    imageUrl: "https://firebasestorage.googleapis.com/v0/b/airstripe-dev.appspot.com/o/flights-card-images%2Fphoto-9.jpeg?alt=media&token=6e4c9f25-8006-4f6f-a7d9-91447950e34e",
     totalSeat: 180,
     currentBid: 52,
     favorite: false,
