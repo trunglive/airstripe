@@ -9,8 +9,10 @@ const Header = () => (
       activeClassName="is-active"
       exact={true}
     >
-      <img className="logo" src="icons/logo.svg" />
-      <span>airstripe</span>
+      <div className="logo-group">
+        <img className="logo-icon" src="icons/logo.svg" />
+        <span className="brand-name">airstripe</span>
+      </div>
     </NavLink>
     <div className="nav-icon-group">
       <NavLink

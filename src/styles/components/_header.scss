@@ -1,21 +1,28 @@
-.logo {
-  width: 3rem;
+.logo-icon {
+  width: 4rem;
+  height: 4rem;
 }
 
 .logo-link {
+  display: block;
   color: inherit;
   text-decoration: none;
 }
 
-.logo-title {
-  color: inherit;
-  text-decoration: none;
+.brand-name {
+  font-size: 2.4rem;
+  font-weight: 700;
 }
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 4rem 10rem;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
 }
 
 .nav-icon-group {
@@ -23,8 +30,14 @@
   &__how-it-works,
   &__signup,
   &__login {
-    padding-left: 2rem;
+    display: inline-block;
+    padding-left: 3rem;
     color: inherit;
     text-decoration: none;
+    letter-spacing: 0.5px;
+
+    @media only screen and (max-width: $bp-medium) {
+      margin-top: 2rem;
+    }
   }
 }

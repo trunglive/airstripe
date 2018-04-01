@@ -9,7 +9,7 @@ import Login from '../components/Login';
 
 const AppRouter = () => (
   <BrowserRouter>
-    <div>
+    <div className="main">
       <Header />
       <Switch>
         <Route path="/" component={HomePage} exact={true} />

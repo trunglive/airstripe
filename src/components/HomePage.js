@@ -29,12 +29,12 @@ class HomePage extends Component {
     const { flights } = this.state;
     console.log(flights);
     return (
-      <div>
+      <div className="homepage">
         <p>Home Page</p>
         <SearchBar />
         <div className="trip-container">
           {flights.length === 0 ? (
-            <img src="images/spinner.svg" />
+            <img className="spinner" src="images/spinner.svg" />
           ) : (
             flights.map(flight => <TripCard key={flight.id} {...flight} />)
           )}
