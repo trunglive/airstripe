@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { convertedTime } from '../utils/convertedTime';
 
 export default class TripCard extends Component {
   render() {
@@ -13,30 +14,40 @@ export default class TripCard extends Component {
       trip
     } = this.props;
 
+    const convertedDepartureTime = convertedTime(trip.depart.departureTime);
+    const convertedArrivalTime = convertedTime(trip.depart.arrivalTime);
+    
     return (
       <div className="trip-card">
-        <p className="trip-card__title">{title + " title"}</p>
-        <p className="trip-card__description">{description + "description"}</p>
         <img className="trip-card__image" src={imageUrl} />
-        <div className="trip-card__origin">
-          {airportCode.origin} + {trip.depart.departureTime}
-        </div>
-        <div className="trip-card__destination">
-          {airportCode.destination} + {trip.depart.arrivalTime}
-        </div>
-        <div className="trip-card__passengers">
-          <div>
-            {currentBid}/{totalSeat}
+        <div className="trip-card-text">
+          <p className="trip-card__title">{title}</p>
+          <p className="trip-card__description">{description}</p>
+          <div className="flight-info">
+            <div className="flight-info__origin">
+              <div>{airportCode.origin}</div>
+              <div>{convertedDepartureTime}</div>
+            </div>
+            <img className="flight-info__airplane-icon" src="icons/airplane.svg" />
+            <div className="flight-info__destination">
+              <div>{airportCode.destination}</div>
+              <div>{convertedArrivalTime}</div>
+            </div>
+            <div className="flight-info__passengers">
+              <div>
+                <span>{currentBid}</span>/{totalSeat}
+              </div>
+              <div>Passengers</div>
+            </div>
+            <div className="flight-info__days-to-go">
+              <div>30</div>
+              <div>days to go</div>
+            </div>
+            <div className="flight-info__next-tier">
+              <div>$99</div>
+              <div>Next tier $109</div>
+            </div>
           </div>
-          <div>Passengers</div>
-        </div>
-        <div className="trip-card__days-to-go">
-          <div>30</div>
-          <div>days to go</div>
-        </div>
-        <div className="trip-card__next-tier">
-          <div>$99</div>
-          <div>Next tier $109</div>
         </div>
       </div>
     );
