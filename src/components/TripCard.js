@@ -7,13 +7,11 @@ export default class TripCard extends Component {
     const {
       id,
       fareClass,
-      destination,
       title,
       description,
       imageUrl,
       currentBid,
       totalSeat,
-      airportCode,
       trip
     } = this.props;
 
@@ -30,15 +28,15 @@ export default class TripCard extends Component {
           <p className="trip-card__description">{description}</p>
           <div className="flight-info">
             <div className="flight-info__origin">
-              <div>{airportCode.origin}</div>
+              <div>{trip.departing.originCode}</div>
               <div>{convertedDepartureTime}</div>
             </div>
             <img
               className="flight-info__airplane-icon"
-              src="icons/airplane.svg"
+              src="/icons/airplane.svg"
             />
             <div className="flight-info__destination">
-              <div>{airportCode.destination}</div>
+              <div>{trip.returning.destinationCode}</div>
               <div>{convertedArrivalTime}</div>
             </div>
             <div className="flight-info__passengers">

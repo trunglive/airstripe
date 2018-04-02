@@ -43,7 +43,7 @@ export default class FilterMenu extends Component {
           />
         </div>
 
-        <a className="search-button">Search Flights</a>
+        <a className="search-button blue-button">Search Flights</a>
       </div>
     );
   }

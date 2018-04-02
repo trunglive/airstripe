@@ -1,0 +1,42 @@
+.single-trip-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-gap: 10rem;
+}
+
+.single-trip {
+
+  &__image {
+    width: 100%;
+  }
+  // border: 1px solid red;
+}
+
+.flight-info {
+  display: flex;
+  flex-direction: column;
+  // border: 1px solid red;
+}
+
+.schedule-board {
+
+  display: grid;
+  grid-template-columns: minmax(min-content, 1fr) min-content minmax(min-content, 1fr);
+  grid-gap: 2rem;
+  padding: 2rem;
+
+}
+
+.menu-toggle {
+
+  border: 2px solid red;
+}
+
+.icon-light-group {
+
+  > img {
+    width: 1.6rem;
+    margin-left: 1.5rem;
+  }
+}
+

@@ -1,9 +1,14 @@
-import { GET_ALL_FLIGHTS } from "../actions/actionTypes";
+import { GET_ALL_FLIGHTS, GET_SINGLE_FLIGHT } from "../actions/actionTypes";
 
 const initialFlightsState = [];
 
 const flightsReducer = (state = initialFlightsState, action) => {
-  return action.type === GET_ALL_FLIGHTS ? action.flights : state;
+  switch (action.type) {
+    case GET_ALL_FLIGHTS:
+      return action.flights;
+    default:
+      return state;
+  }
 };
 
 export default flightsReducer;

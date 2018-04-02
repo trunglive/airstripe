@@ -1,4 +1,5 @@
 export const GET_ALL_FLIGHTS = 'GET_ALL_FLIGHTS';
+export const GET_SINGLE_FLIGHT = 'GET_SINGLE_FLIGHT';
 export const BOOK_FLIGHT = 'BOOK_FLIGHT';
 
 export const ADD_TO_WISHLIST = 'ADD_TO_WISHLIST';

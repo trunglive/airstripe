@@ -5,7 +5,7 @@ const Header = () => (
   <header className="header">
     <Link className="logo-link" to="/">
       <div className="logo-group">
-        <img className="logo-icon" src="icons/logo.svg" />
+        <img className="logo-icon" src="/icons/logo.svg" />
         <span className="brand-name">airstripe</span>
       </div>
     </Link>

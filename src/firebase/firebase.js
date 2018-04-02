@@ -2,7 +2,7 @@ import * as firebase from "firebase";
 import { defaultData } from '../firebase/defaultData.js';
 import { config } from '../firebase/config.js';
 
-firebase.initializeApp(config);
+!firebase.apps.length && firebase.initializeApp(config);
 
 const database = firebase.database();
 
@@ -14,6 +14,4 @@ const database = firebase.database();
 //   database.ref('flightCards').push(data);
 // })
 
-const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-
-export { firebase, googleAuthProvider, database as default };
+export { firebase, database as default };
