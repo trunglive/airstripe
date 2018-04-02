@@ -1,8 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AppRouter from './routers/AppRouter';
-import 'normalize.css/normalize.css';
-import './styles/styles.scss';
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "react-redux";
+import AppRouter from "./routers/AppRouter";
+import configureStore from "./store/configureStore";
+import "normalize.css/normalize.css";
+import "./styles/styles.scss";
 // import './firebase/firebase';
 
-ReactDOM.render(<AppRouter />, document.getElementById('app'));
+const store = configureStore();
+
+const jsx = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+);
+
+render(jsx, document.getElementById("app"));
