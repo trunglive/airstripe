@@ -1,47 +1,48 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => (
   <header className="header">
-    <NavLink
-      className="logo-link"
-      to="/"
-      activeClassName="is-active"
-      exact={true}
-    >
+    <Link className="logo-link" to="/">
       <div className="logo-group">
         <img className="logo-icon" src="icons/logo.svg" />
         <span className="brand-name">airstripe</span>
       </div>
-    </NavLink>
+    </Link>
     <div className="nav-icon-group">
       <NavLink
         className="nav-icon-group__flights"
+        activeStyle={{
+          color: "#1A81F3"
+        }}
         to="#"
-        activeClassName="is-active"
-        exact={true}
       >
         Flight
       </NavLink>
       <NavLink
         className="nav-icon-group__how-it-works"
+        activeStyle={{
+          color: "#1A81F3"
+        }}
         to="/how-it-works"
-        activeClassName="is-active"
-        exact={true}
       >
         How It Works
       </NavLink>
       <NavLink
         className="nav-icon-group__signup"
+        activeStyle={{
+          color: "#1A81F3"
+        }}
         to="#"
-        activeClassName="is-active"
       >
         Sign Up
       </NavLink>
       <NavLink
         className="nav-icon-group__login"
+        activeStyle={{
+          color: "#1A81F3"
+        }}
         to="/login"
-        activeClassName="is-active"
       >
         Log In
       </NavLink>

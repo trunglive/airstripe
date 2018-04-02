@@ -22,7 +22,7 @@ export default class TripCard extends Component {
 
     return (
       <div className="trip-card">
-        <Link to={`/${fareClass}/${id}`}>
+        <Link to={`/flight/${fareClass}/${id}`}>
           <img className="trip-card__image" src={imageUrl} />
         </Link>
         <div className="trip-card-text">
@@ -42,7 +42,10 @@ export default class TripCard extends Component {
               <div>{convertedArrivalTime}</div>
             </div>
             <div className="flight-info__passengers">
-              <Link to={`/${fareClass}/${id}`}>
+              <Link
+                style={{ textDecoration: "none", color: "#363636" }}
+                to={`/flight/${fareClass}/${id}`}
+              >
                 <span>{currentBid}</span>/{totalSeat}
               </Link>
               <div>Travelers</div>

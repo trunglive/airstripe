@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,7 +9,7 @@ import Login from '../components/Login';
 import SingleTripPage from '../components/SingleTripPage';
 
 const AppRouter = () => (
-  <BrowserRouter>
+  <Router>
     <div className="main">
       <Header />
       <Switch>
@@ -21,7 +21,7 @@ const AppRouter = () => (
       </Switch>
       <Footer />
     </div>
-  </BrowserRouter>
+  </Router>
 );
 
 export default AppRouter;

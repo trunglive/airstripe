@@ -10,7 +10,7 @@ class HomePage extends Component {
   };
 
   componentDidMount() {
-    firebase.initializeApp(config);
+    !firebase.apps.length && firebase.initializeApp(config);
     const database = firebase.database();
 
     database.ref("flightCards").on("value", snapshot => {
