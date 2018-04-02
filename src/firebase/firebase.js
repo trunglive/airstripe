@@ -1,6 +1,6 @@
 import * as firebase from "firebase";
-import { defaultData } from '../utils/defaultData';
-// import { config } from './config';
+import { defaultData } from '../firebase/defaultData.js';
+import { config } from '../firebase/config.js';
 
 firebase.initializeApp(config);
 
@@ -8,6 +8,8 @@ const database = firebase.database();
 
 // database.ref().remove();
 
+// go through each item in array, and push it to firebase
+// firebase will automatically convert it to JSON, with random ID
 // defaultData.map(data => {
 //   database.ref('flightCards').push(data);
 // })

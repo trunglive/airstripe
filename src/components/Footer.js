@@ -14,7 +14,7 @@ const Footer = () => (
         <span className="brand-name">airstripe</span>
       </div>
 
-      <div className="copyright"> &copy; 2017 | Legal</div>
+      <div className="copyright"> &copy; 2018 | All Rights Reserved</div>
     </NavLink>
 
     <div className="social-and-lang-group">

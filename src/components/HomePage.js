@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SearchBar from "./SearchBar";
+import FilterMenu from "./FilterMenu";
 import TripCard from "./TripCard";
 import * as firebase from "firebase";
 import { config } from "../firebase/config";
@@ -28,10 +28,10 @@ class HomePage extends Component {
   render() {
     const { flights } = this.state;
     console.log(flights);
+
     return (
       <div className="homepage">
-        <p>Home Page</p>
-        <SearchBar />
+        <FilterMenu />
         <div className="trip-container">
           {flights.length === 0 ? (
             <img className="spinner" src="images/spinner.svg" />

@@ -1,0 +1,22 @@
+.dropdown-filter {
+  width: 11rem;
+
+  .Select-placeholder {
+    color: $color-secondary;
+    background-color: $color-grey-2;
+  }
+
+  .Select-control {
+    border: none;
+  }
+
+}
+
+.placeholder-text {
+  .Select-placeholder {
+    color: $color-primary;
+  }
+}
+
+
+

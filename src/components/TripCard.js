@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import { convertedTime } from '../utils/convertedTime';
+import { convertedTime } from "../utils/convertedTime";
+import { Link } from "react-router-dom";
 
 export default class TripCard extends Component {
   render() {
     const {
+      id,
+      fareClass,
       destination,
       title,
       description,
@@ -14,12 +17,14 @@ export default class TripCard extends Component {
       trip
     } = this.props;
 
-    const convertedDepartureTime = convertedTime(trip.depart.departureTime);
-    const convertedArrivalTime = convertedTime(trip.depart.arrivalTime);
-    
+    const convertedDepartureTime = convertedTime(trip.departing.departureTime);
+    const convertedArrivalTime = convertedTime(trip.departing.arrivalTime);
+
     return (
       <div className="trip-card">
-        <img className="trip-card__image" src={imageUrl} />
+        <Link to={`/${fareClass}/${id}`}>
+          <img className="trip-card__image" src={imageUrl} />
+        </Link>
         <div className="trip-card-text">
           <p className="trip-card__title">{title}</p>
           <p className="trip-card__description">{description}</p>
@@ -28,16 +33,19 @@ export default class TripCard extends Component {
               <div>{airportCode.origin}</div>
               <div>{convertedDepartureTime}</div>
             </div>
-            <img className="flight-info__airplane-icon" src="icons/airplane.svg" />
+            <img
+              className="flight-info__airplane-icon"
+              src="icons/airplane.svg"
+            />
             <div className="flight-info__destination">
               <div>{airportCode.destination}</div>
               <div>{convertedArrivalTime}</div>
             </div>
             <div className="flight-info__passengers">
-              <div>
+              <Link to={`/${fareClass}/${id}`}>
                 <span>{currentBid}</span>/{totalSeat}
-              </div>
-              <div>Passengers</div>
+              </Link>
+              <div>Travelers</div>
             </div>
             <div className="flight-info__days-to-go">
               <div>30</div>
