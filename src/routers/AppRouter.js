@@ -1,12 +1,12 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import NotFoundPage from '../components/NotFoundPage';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import HomePage from '../components/HomePage';
-import HowItWorks from '../components/HowItWorks';
-import Login from '../components/Login';
-import SingleTripPage from '../components/SingleTripPage';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import NotFoundPage from "../components/NotFoundPage";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import HomePage from "../components/HomePage";
+import HowItWorks from "../components/HowItWorks";
+import Login from "../components/Login";
+import SingleTripPage from "../components/SingleTripPage";
 
 const AppRouter = () => (
   <Router>

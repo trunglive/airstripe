@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { fetchAllFlights } from '../actions/flightsActions';
+import { connect } from "react-redux";
+import { fetchAllFlights } from "../actions/flightsActions";
 import FilterMenu from "./FilterMenu";
 import TripCard from "./TripCard";
+import { FlightSelectors } from "../selectors/FlightSelectors";
 import * as firebase from "firebase";
 
 class HomePage extends Component {
@@ -28,8 +29,8 @@ class HomePage extends Component {
   }
 }
 
-const mapStateToProps = ({ flights }) => ({
-  flights
-})
+const mapStateToProps = ({ flights, finding, sorting }) => ({
+  flights: FlightSelectors(flights, finding, sorting)
+});
 
 export default connect(mapStateToProps, { fetchAllFlights })(HomePage);

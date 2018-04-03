@@ -1,4 +1,4 @@
-import { GET_ALL_FLIGHTS, GET_SINGLE_FLIGHT } from "./actionTypes";
+import { GET_ALL_FLIGHTS } from "./actionTypes";
 import database from "../firebase/firebase";
 
 export const getAllFlights = flights => ({

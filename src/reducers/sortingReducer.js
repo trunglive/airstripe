@@ -1,6 +1,7 @@
 import {
   SORT_BY_POPULARITY,
   SORT_BY_CHEAPEST_PRICE,
+  SORT_BY_EXPIRATION_DATE,
   SORT_BY_SHORTEST_FLIGHT
 } from "../actions/actionTypes";
 
@@ -18,7 +19,12 @@ const sortingReducer = (state = initialSortingState, action) => {
     case SORT_BY_CHEAPEST_PRICE:
       return {
         ...state,
-        sortBy: "Cheapest Price"
+        sortBy: "Cheapest"
+      };
+    case SORT_BY_EXPIRATION_DATE:
+      return {
+        ...state,
+        sortBy: "Expiration Date"
       };
     case SORT_BY_SHORTEST_FLIGHT:
       return {

@@ -9,18 +9,22 @@ export default class FilterMenu extends Component {
           <span>Find</span>
           <DropdownFilter
             placeholderTextColor={"placeholder-text"}
-            values={["Economy", "Business", "First Class"]}
+            values={["All", "Economy", "Business", "First Class"]}
             placeholder={"Fare Class"}
           />
           <span>flights from</span>
           <DropdownFilter
             values={[
               "Amsterdam",
+              "Manchester",
+              "Santorini",
+              "Florence",
               "London",
-              "Milan",
+              "Barcelona",
               "Paris",
-              "Seville",
-              "Rome"
+              "Milan",
+              "Rome",
+              "Seville"
             ]}
             placeholder={"Anywhere"}
           />
@@ -28,21 +32,29 @@ export default class FilterMenu extends Component {
           <DropdownFilter
             values={[
               "Amsterdam",
+              "Manchester",
+              "Santorini",
+              "Florence",
               "London",
-              "Milan",
+              "Barcelona",
               "Paris",
-              "Seville",
-              "Rome"
+              "Milan",
+              "Rome",
+              "Seville"
             ]}
             placeholder={"Anywhere"}
           />
           <span>sort by</span>
           <DropdownFilter
-            values={["Popularity", "Cheapest", "Shortest Flight"]}
+            values={[
+              "Popularity",
+              "Cheapest",
+              "Expiration Date",
+              "Shortest Flight"
+            ]}
             placeholder={"Popularity"}
           />
         </div>
-
         <a className="search-button blue-button">Search Flights</a>
       </div>
     );

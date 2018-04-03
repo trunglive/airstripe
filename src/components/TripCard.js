@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { convertedDate } from "../utils/convertedTime";
+import { convertedDate, daysToGo } from "../utils/convertedTime";
 import { Link } from "react-router-dom";
 
 export default class TripCard extends Component {
@@ -51,7 +51,7 @@ export default class TripCard extends Component {
               <div>Travelers</div>
             </div>
             <div className="flight-info__days-to-go">
-              <div>30</div>
+              <div>{daysToGo(trip.departing.departureTime)}</div>
               <div>days to go</div>
             </div>
             <div className="flight-info__next-tier">

@@ -1,5 +1,5 @@
 import * as firebase from "firebase";
-import { defaultData } from '../firebase/defaultData.js';
+// import { defaultData } from '../firebase/defaultData.js';
 import { config } from '../firebase/config.js';
 
 !firebase.apps.length && firebase.initializeApp(config);

@@ -1,4 +1,4 @@
-import { GET_ALL_FLIGHTS, GET_SINGLE_FLIGHT } from "../actions/actionTypes";
+import { GET_ALL_FLIGHTS } from "../actions/actionTypes";
 
 const initialFlightsState = [];
 
