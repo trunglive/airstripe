@@ -1,5 +1,5 @@
 @mixin small-light-text($font-size: 1.2rem) {
-  color: $color-grey-1;
+  color: $color-grey-dark-1;
   font-size: $font-size;
 }
 
@@ -37,7 +37,7 @@
 
 .trip-card-text {
   padding: 2rem;
-  border: 1px solid rgba($color-grey-1, 0.2);
+  border: 1px solid rgba($color-grey-dark-1, 0.2);
   border-top: none;
   border-radius: 0 0 3px 3px;
 }

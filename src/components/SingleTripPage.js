@@ -27,12 +27,14 @@ class SingleTripPage extends Component {
       <div>
         {Object.keys(singleFlight).length > 0 ? (
           <div className="single-trip-container">
-            <div className="single-trip">
-              <p className="single-trip__title">{title}</p>
-              <p className="single-trip__description">{description}</p>
-              <img className="single-trip__image" src={imageUrl} />
+            <div className="single-trip-intro">
+              <p className="single-trip-intro__title">{title}</p>
+              <p className="single-trip-intro__description">{description}</p>
             </div>
-            <div className="flight-info">
+
+            <img className="single-trip-intro__image" src={imageUrl} />
+
+            <div className="all-flight-details">
               <div className="schedule-board">
                 <div>
                   <div>{`${trip.departing.originPoint} (${
@@ -62,29 +64,42 @@ class SingleTripPage extends Component {
                   src="/icons/airplane.svg"
                 />
                 <div>
-                  <div>{`${trip.returning.destinationPoint} (${
-                    trip.returning.destinationCode
+                  <div>{`${trip.departing.originPoint} (${
+                    trip.departing.originCode
                   })`}</div>
                   <p>{trip.returning.arrivalTime}</p>
                 </div>
               </div>
-              <div className="price-board">
+              <div className="detail-board">
                 <p>
-                  {currentBid} passengers of {totalSeat} goal
+                  <span className="detail-board__current-bid">
+                    {currentBid}
+                  </span>{" "}
+                  passengers of {totalSeat} goal
                 </p>
-                <p>30 days to go</p>
-                <p>{price} current price, next tier $109</p>
                 <p>
-                  <span>All or nothing</span>.This flight will only take off if
+                  <span className="detail-board__days-to-go">30</span> days to
+                  go
+                </p>
+                <p>
+                  <span className="detail-board__current-price">${price}</span>{" "}
+                  current price, next tier $109
+                </p>
+                <p className="detail-board__note">
+                  <span>All or nothing</span>. This flight will only take off if{" "}
                   {totalSeat} passengers join by November 30, 2017 5:00AM CEST
                 </p>
-                <div class="icon-light-group">
-<img src="/icons/icon-light/facebook-light.svg" />
-<img src="/icons/icon-light/instagram-light.svg" />
-<img src="/icons/icon-light/twitter-light.svg" />
-<img src="/icons/icon-light/mail-light.svg" />
+                <div className="detail-board__icon-and-button">
+                  <div className="icon-light-group">
+                    <img src="/icons/icon-light/facebook-light.svg" />
+                    <img src="/icons/icon-light/instagram-light.svg" />
+                    <img src="/icons/icon-light/twitter-light.svg" />
+                    <img src="/icons/icon-light/mail-light.svg" />
+                  </div>
+                  <a className="book-this-flight blue-button">
+                    Book this flight
+                  </a>
                 </div>
-                <a className="search-button blue-button">Book this flight</a>
               </div>
             </div>
             <div className="menu-toggle">Content for menu toggle</div>

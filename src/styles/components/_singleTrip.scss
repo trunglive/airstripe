@@ -1,42 +1,100 @@
 .single-trip-container {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-gap: 10rem;
+  // grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  grid-column-gap: 10rem;
+  padding: 8rem 0;
 }
 
-.single-trip {
+.single-trip-intro {
+  grid-column: 1 / -1;
+
+  &__title {
+    font-size: 3.4rem;
+    font-weight: 700;
+  }
+
+  &__description {
+    padding: 2rem 0;
+    color: $color-grey-dark-1;
+  }
 
   &__image {
+    display: block;
     width: 100%;
+    height: 350px;
+    object-fit: cover;
   }
   // border: 1px solid red;
 }
 
-.flight-info {
+.all-flight-details {
   display: flex;
   flex-direction: column;
   // border: 1px solid red;
 }
 
 .schedule-board {
-
   display: grid;
-  grid-template-columns: minmax(min-content, 1fr) min-content minmax(min-content, 1fr);
+  grid-template-columns: minmax(min-content, 1fr) min-content minmax(
+      min-content,
+      1fr
+    );
   grid-gap: 2rem;
   padding: 2rem;
-
+  margin-bottom: 2rem;
+  background-color: $color-grey-light-4;
+  border: 1px solid $color-grey-light-1;
+  border-radius: 3px;
 }
 
-.menu-toggle {
+@mixin big-number($color: $color-primary) {
+  padding-right: 0.5rem;
+  color: $color;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
 
+.detail-board {
+  @include small-light-text(1.4rem);
+
+  > p {
+    margin-top: 2rem;
+  }
+  &__current-bid {
+    @include big-number;
+  }
+
+  &__days-to-go,
+  &__current-price {
+    @include big-number($color-secondary);
+  }
+
+  &__note {
+    font-size: 1.2rem;
+    color: $color-grey-dark-2;
+    line-height: 1.5;
+  }
+
+  &__icon-and-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 4rem;
+
+    img {
+      width: 1.6rem;
+      margin-right: 1.5rem;
+    }
+  }
+}
+.menu-toggle {
   border: 2px solid red;
 }
 
 .icon-light-group {
-
   > img {
     width: 1.6rem;
     margin-left: 1.5rem;
   }
 }
-
