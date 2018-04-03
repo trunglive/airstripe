@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { convertedTime } from "../utils/convertedTime";
+import { convertedDate } from "../utils/convertedTime";
 import { Link } from "react-router-dom";
 
 export default class TripCard extends Component {
@@ -10,13 +10,15 @@ export default class TripCard extends Component {
       title,
       description,
       imageUrl,
+      price,
       currentBid,
       totalSeat,
       trip
     } = this.props;
 
-    const convertedDepartureTime = convertedTime(trip.departing.departureTime);
-    const convertedArrivalTime = convertedTime(trip.departing.arrivalTime);
+    const convertedDepartureTime = convertedDate(trip.departing.departureTime);
+    const convertedArrivalTime = convertedDate(trip.departing.arrivalTime);
+    const nextTier = price + 30;
 
     return (
       <div className="trip-card">
@@ -33,7 +35,7 @@ export default class TripCard extends Component {
             </div>
             <img
               className="flight-info__airplane-icon"
-              src="/icons/airplane.svg"
+              src="/icons/airplane-depart.svg"
             />
             <div className="flight-info__destination">
               <div>{trip.returning.destinationCode}</div>
@@ -53,8 +55,8 @@ export default class TripCard extends Component {
               <div>days to go</div>
             </div>
             <div className="flight-info__next-tier">
-              <div>$99</div>
-              <div>Next tier $109</div>
+              <div>${price}</div>
+              <div>Next tier ${nextTier}</div>
             </div>
           </div>
         </div>

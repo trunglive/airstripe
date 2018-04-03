@@ -15,7 +15,8 @@ const Header = () => (
         activeStyle={{
           color: "#1A81F3"
         }}
-        to="#"
+        to="/"
+        exact={true}
       >
         Flight
       </NavLink>

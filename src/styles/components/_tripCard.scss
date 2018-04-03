@@ -105,11 +105,15 @@
   }
 
   &__next-tier {
-    justify-self: center;
+    justify-self: end;
 
     div:last-child {
       padding-top: 0.5rem;
       @include small-light-text();
     }
   }
+}
+
+.icon-reverse {
+  transform: rotate(180deg);
 }
