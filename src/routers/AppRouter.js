@@ -13,9 +13,9 @@ const AppRouter = () => (
     <div className="main">
       <Header />
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/how-it-works" component={HowItWorks} />
-        <Route exact path="/login" component={Login} />
+        {/* <Route exact path="/login" component={Login} /> */}
         <Route exact path="/flight/:fareClass/:id" component={SingleTripPage} />
         <Route component={NotFoundPage} />
       </Switch>

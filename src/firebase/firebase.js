@@ -4,7 +4,8 @@ import { config } from '../firebase/config.js';
 
 !firebase.apps.length && firebase.initializeApp(config);
 
-const database = firebase.database();
+// const database = firebase.database();
+// const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 // database.ref().remove();
 
@@ -14,4 +15,10 @@ const database = firebase.database();
 //   database.ref('flightCards').push(data);
 // })
 
-export { firebase, database as default };
+export default firebase;
+
+export const database = firebase.database();
+export const auth = firebase.auth();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+
+// export { firebase, database, googleAuthProvider as default };
