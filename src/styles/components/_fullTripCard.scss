@@ -17,11 +17,27 @@
 }
 
 .trip-card {
+  position: relative;
+
+  // &__unlike-icon {
+  //   position: absolute;
+  //   top: 1.5rem;
+  //   right: 1.5rem;
+
+  //   &:hover {
+  //     cursor: pointer;
+  //   }
+  // }
+
   &__image {
     display: block;
     width: 100%;
     height: 180px;
     object-fit: cover;
+
+    &:hover {
+      filter: brightness(0.7);
+    }
   }
 
   &__title {

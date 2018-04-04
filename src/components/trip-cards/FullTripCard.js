@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { convertedDate, daysToGo } from "../utils/convertedTime";
 import { Link } from "react-router-dom";
+import { convertedDate, daysToGo } from '../../utils/convertedTime';
 
 export default class TripCard extends Component {
   render() {
@@ -22,11 +22,19 @@ export default class TripCard extends Component {
 
     return (
       <div className="trip-card">
-        <Link to={`/flight/${fareClass}/${id}`}>
+        <Link
+          to={`/flight/${fareClass}/${id}`}
+          style={{ textDecoration: "none", color: "#363636" }}
+        >
           <img className="trip-card__image" src={imageUrl} />
         </Link>
         <div className="trip-card-text">
-          <p className="trip-card__title">{title}</p>
+          <Link
+            to={`/flight/${fareClass}/${id}`}
+            style={{ textDecoration: "none", color: "#363636" }}
+          >
+            <p className="trip-card__title">{title}</p>
+          </Link>
           <p className="trip-card__description">{description}</p>
           <div className="flight-info">
             <div className="flight-info__origin">

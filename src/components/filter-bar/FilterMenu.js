@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DropdownFilter from "./DropdownFilter";
+import SingleDropdownFilter from "./SingleDropdownFilter";
 
 export default class FilterMenu extends Component {
   render() {
@@ -7,13 +7,13 @@ export default class FilterMenu extends Component {
       <div className="filter-menu">
         <div className="filter-menu__criteria">
           <span>Find</span>
-          <DropdownFilter
+          <SingleDropdownFilter
             placeholderTextColor={"placeholder-text"}
             values={["All", "Economy", "Business", "First Class"]}
             placeholder={"Fare Class"}
           />
           <span>flights from</span>
-          <DropdownFilter
+          <SingleDropdownFilter
             values={[
               "Amsterdam",
               "Manchester",
@@ -29,7 +29,7 @@ export default class FilterMenu extends Component {
             placeholder={"Anywhere"}
           />
           <span>to</span>
-          <DropdownFilter
+          <SingleDropdownFilter
             values={[
               "Amsterdam",
               "Manchester",
@@ -45,7 +45,7 @@ export default class FilterMenu extends Component {
             placeholder={"Anywhere"}
           />
           <span>sort by</span>
-          <DropdownFilter
+          <SingleDropdownFilter
             values={[
               "Popularity",
               "Cheapest",

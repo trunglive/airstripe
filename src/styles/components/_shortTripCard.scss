@@ -1,0 +1,27 @@
+.small-trip-container {
+  display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+}
+
+.small-trip-card {
+  &__image {
+    width: 100%;
+
+    &:hover {
+      filter: brightness(0.7);
+    }
+  }
+
+  &__title {
+    margin-top: 0.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+
+  &__description {
+    margin-top: 0.5rem;
+    @include small-light-text(1.4rem);
+  }
+}

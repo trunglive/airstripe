@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import ShortTripCard from "./trip-cards/ShortTripCard";
 import { fetchAllFlights } from "../actions/flightsActions";
 import {
   convertedDateAndHour,
   daysToGo,
   expiredDate
 } from "../utils/convertedTime";
+import { randomFourCards } from "../utils/randomFourCards";
 
 class SingleTripPage extends Component {
   componentDidMount() {
@@ -29,6 +31,12 @@ class SingleTripPage extends Component {
     } = singleFlight;
 
     const nextTier = price + 30;
+
+    const newFlights = randomFourCards(
+      this.props.flights,
+      this.props.match.params.id
+    );
+
     return (
       <div>
         {Object.keys(singleFlight).length > 0 ? (
@@ -109,22 +117,36 @@ class SingleTripPage extends Component {
                 </p>
                 <div className="detail-board__icon-and-button">
                   <div className="icon-light-group">
-                    <img src="/icons/icon-light/facebook-light.svg" />
-                    <img src="/icons/icon-light/instagram-light.svg" />
-                    <img src="/icons/icon-light/twitter-light.svg" />
-                    <img src="/icons/icon-light/mail-light.svg" />
+                    <a href="https://www.facebook.com" target="_blank">
+                      <img src="/icons/icon-light/facebook-light.svg" />
+                    </a>
+                    <a
+                      href={`https://twitter.com/intent/tweet?text=${title}. ${description}.`}
+                      target="_blank"
+                    >
+                      <img src="/icons/icon-light/twitter-light.svg" />
+                    </a>
+                    <a href={`mailto:?subject=${title}`}>
+                      <img src="/icons/icon-light/mail-light.svg" />
+                    </a>
                   </div>
-                  <a className="book-this-flight blue-button">
-                    Book this flight
-                  </a>
+                  <div className="book-save-button">
+                    <a className="book-this-flight blue-button">
+                      Book this flight
+                    </a>
+                    <a className="save-to-list blue-button">Save to list</a>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="menu-toggle">Content for menu toggle</div>
           </div>
         ) : (
           <img className="spinner" src="/images/spinner.svg" />
         )}
+        <div className="small-trip-container">
+          {newFlights !== undefined &&
+            newFlights.map(flight => <ShortTripCard {...flight} />)}
+        </div>
       </div>
     );
   }

@@ -1,13 +1,15 @@
 @import './base/settings';
 @import './base/base';
 
+@import './components/navigation/header';
 @import './components/homepage';
-@import './components/header';
 
-@import './components/filterMenu';
-@import './components/dropdownFilter';
+@import './components/filter-bar/filterMenu';
+@import './components/filter-bar/singleDropdownFilter';
 
-@import './components/tripCard';
-@import './components/footer';
+@import './components/fullTripCard';
+@import './components/shortTripCard';
+@import './components/singleTripPage';
 
-@import './components/singleTrip';
+@import './components/navigation/footer';
+

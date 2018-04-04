@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchAllFlights } from "../actions/flightsActions";
-import FilterMenu from "./FilterMenu";
-import TripCard from "./TripCard";
+import FilterMenu from "./filter-bar/FilterMenu";
+import FullTripCard from "./trip-cards/FullTripCard";
 import { FlightSelectors } from "../selectors/FlightSelectors";
-import * as firebase from "firebase";
 
 class HomePage extends Component {
   componentDidMount() {
@@ -21,7 +20,7 @@ class HomePage extends Component {
           {flights.length === 0 ? (
             <img className="spinner" src="/images/spinner.svg" />
           ) : (
-            flights.map(flight => <TripCard key={flight.id} {...flight} />)
+            flights.map(flight => <FullTripCard key={flight.id} {...flight} />)
           )}
         </div>
       </div>

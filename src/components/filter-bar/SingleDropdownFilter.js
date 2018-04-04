@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAllFlights } from "../actions/flightsActions";
+import { fetchAllFlights } from "../../actions/flightsActions";
 import Select from "react-select";
 import "react-select/dist/react-select.css";
 import {
@@ -8,13 +8,13 @@ import {
   sortByCheapestPrice,
   sortByExpirationDate,
   sortByShortestFlight
-} from "../actions/sortingActions";
+} from "../../actions/sortingActions";
 import {
   displayAllClasses,
   findEconomyClass,
   findBusinessClass,
   findFirstClass
-} from "../actions/fareClassActions";
+} from "../../actions/fareClassActions";
 
 class DropdownFilter extends Component {
   state = {

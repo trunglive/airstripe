@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
   grid-column-gap: 10rem;
+  grid-row-gap: 6rem;
   padding: 8rem 0;
 }
 
@@ -118,4 +119,13 @@ hr {
     width: 1.6rem;
     margin-left: 1.5rem;
   }
+}
+
+.book-this-flight {
+  display: block;
+}
+
+.save-to-list {
+  display: block;
+  margin-top: 1rem;
 }
