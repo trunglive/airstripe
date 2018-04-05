@@ -4,10 +4,15 @@ import { fetchAllFlights } from "../actions/flightsActions";
 import FilterMenu from "./filter-bar/FilterMenu";
 import FullTripCard from "./trip-cards/FullTripCard";
 import { FlightSelectors } from "../selectors/FlightSelectors";
+import { auth } from '../firebase/firebase';
 
 class HomePage extends Component {
   componentDidMount() {
     this.props.fetchAllFlights();
+
+    auth.onAuthStateChanged(user => {
+      console.log(user);
+    })
   }
 
   render() {

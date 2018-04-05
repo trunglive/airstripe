@@ -26,11 +26,15 @@
 }
 
 .nav-icon-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
   &__flights,
   &__how-it-works,
-  &__signup,
-  &__login {
-    display: inline-block;
+  &__login,
+  &__logout,
+  &__logout-text {
     padding-left: 3rem;
     color: inherit;
     text-decoration: none;
@@ -40,4 +44,18 @@
       margin-top: 2rem;
     }
   }
+
+  &__logout {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logout-text {
+    margin-left: -2rem;
+  }
+}
+
+.login-icon {
+  width: 2.5rem;
+  height: 2.5rem;
 }

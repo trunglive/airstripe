@@ -5,7 +5,7 @@ import Header from "../components/navigation/Header";
 import Footer from "../components/navigation/Footer";
 import HomePage from "../components/HomePage";
 import HowItWorks from "../components/HowItWorks";
-import Login from "../components/Login";
+// import Login from "../components/Login";
 import SingleTripPage from "../components/SingleTripPage";
 
 const AppRouter = () => (
@@ -13,7 +13,7 @@ const AppRouter = () => (
     <div className="main">
       <Header />
       <Switch>
-        <Route exact path="/" component={Login} />
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/how-it-works" component={HowItWorks} />
         {/* <Route exact path="/login" component={Login} /> */}
         <Route exact path="/flight/:fareClass/:id" component={SingleTripPage} />

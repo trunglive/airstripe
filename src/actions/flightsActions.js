@@ -1,5 +1,5 @@
 import { GET_ALL_FLIGHTS } from "./actionTypes";
-import database from "../firebase/firebase";
+import { database } from "../firebase/firebase";
 
 export const getAllFlights = flights => ({
   type: GET_ALL_FLIGHTS,

@@ -144,7 +144,7 @@ class SingleTripPage extends Component {
           <img className="spinner" src="/images/spinner.svg" />
         )}
         <div className="small-trip-container">
-          {newFlights !== undefined &&
+          {newFlights &&
             newFlights.map(flight => <ShortTripCard {...flight} />)}
         </div>
       </div>
