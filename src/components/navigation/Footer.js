@@ -16,7 +16,6 @@ const Footer = () => (
 
       <div className="copyright"> &copy; 2018 | All Rights Reserved</div>
     </NavLink>
-
     <div className="social-and-lang-group">
       <span className="social-icon">
         <a href="https://www.facebook.com" target="_blank">

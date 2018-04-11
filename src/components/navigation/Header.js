@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { Link, NavLink, Router } from "react-router-dom";
 import { auth, googleAuthProvider } from "../../firebase/firebase";
+import { addUserInfo } from "../../actions/userInfoActions";
 
 class Header extends Component {
   state = {
@@ -12,6 +14,9 @@ class Header extends Component {
       this.setState({
         currentUser
       });
+      // console.log(currentUser.uid);
+      // console.log(currentUser.displayName);
+      currentUser && this.props.addUserInfo({id: currentUser.uid, name: currentUser.displayName});
     });
   }
 
@@ -22,7 +27,7 @@ class Header extends Component {
 
   render() {
     const { currentUser } = this.state;
-    console.log(currentUser);
+    // console.log(currentUser);
     return (
       <header className="header">
         <Link className="logo-link" to="/">
@@ -79,4 +84,9 @@ class Header extends Component {
     );
   }
 }
-export default Header;
+
+const mapStateToProps = ({ userInfo }) => ({
+  userInfo
+})
+
+export default connect(mapStateToProps, { addUserInfo })(Header);

@@ -1,8 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { convertedDate, daysToGo } from '../../utils/convertedTime';
+import { database } from '../../firebase/firebase';
 
 export default class TripCard extends Component {
+  state = {
+    bookingCount: 0
+  }
+
+  componentDidMount() {
+    database.ref(`flightCards/${this.props.id}/booked`).on('value', snapshot => {
+      const bookingCount = snapshot.numChildren();
+      this.setState({ bookingCount });
+    })
+  }
+
   render() {
     const {
       id,
@@ -15,6 +27,8 @@ export default class TripCard extends Component {
       totalSeat,
       trip
     } = this.props;
+
+    const { bookingCount } = this.state;
 
     const convertedDepartureTime = convertedDate(trip.departing.departureTime);
     const convertedArrivalTime = convertedDate(trip.departing.arrivalTime);
@@ -54,7 +68,7 @@ export default class TripCard extends Component {
                 style={{ textDecoration: "none", color: "#363636" }}
                 to={`/flight/${fareClass}/${id}`}
               >
-                <span>{currentBid}</span>/{totalSeat}
+                <span>{bookingCount + currentBid}</span>/{totalSeat}
               </Link>
               <div>Travelers</div>
             </div>

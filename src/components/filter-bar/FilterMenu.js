@@ -12,38 +12,6 @@ export default class FilterMenu extends Component {
             values={["All", "Economy", "Business", "First Class"]}
             placeholder={"Fare Class"}
           />
-          <span>flights from</span>
-          <SingleDropdownFilter
-            values={[
-              "Amsterdam",
-              "Manchester",
-              "Santorini",
-              "Florence",
-              "London",
-              "Barcelona",
-              "Paris",
-              "Milan",
-              "Rome",
-              "Seville"
-            ]}
-            placeholder={"Anywhere"}
-          />
-          <span>to</span>
-          <SingleDropdownFilter
-            values={[
-              "Amsterdam",
-              "Manchester",
-              "Santorini",
-              "Florence",
-              "London",
-              "Barcelona",
-              "Paris",
-              "Milan",
-              "Rome",
-              "Seville"
-            ]}
-            placeholder={"Anywhere"}
-          />
           <span>sort by</span>
           <SingleDropdownFilter
             values={[
@@ -55,7 +23,6 @@ export default class FilterMenu extends Component {
             placeholder={"Popularity"}
           />
         </div>
-        <a className="search-button blue-button">Search Flights</a>
       </div>
     );
   }

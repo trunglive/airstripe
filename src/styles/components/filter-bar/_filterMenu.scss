@@ -19,13 +19,22 @@
   }
 }
 
-.blue-button {
+@mixin button($bg-color: $color-primary) {
   padding: 1rem 2rem;
   color: $color-grey-light-3;
-  background-color: $color-primary;
+  background-color: $bg-color;
   border-radius: 3px;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
   }
+}
+
+.blue-button {
+  @include button;
+}
+
+.red-button {
+  @include button($color-red);
 }

@@ -9,10 +9,6 @@ import { auth } from '../firebase/firebase';
 class HomePage extends Component {
   componentDidMount() {
     this.props.fetchAllFlights();
-
-    auth.onAuthStateChanged(user => {
-      console.log(user);
-    })
   }
 
   render() {

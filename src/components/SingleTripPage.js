@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import ShortTripCard from "./trip-cards/ShortTripCard";
 import { fetchAllFlights } from "../actions/flightsActions";
+import { database } from "../firebase/firebase";
 import {
   convertedDateAndHour,
   daysToGo,
@@ -10,9 +11,40 @@ import {
 import { randomFourCards } from "../utils/randomFourCards";
 
 class SingleTripPage extends Component {
+  state = {
+    bookingCount: 0
+  }
+
   componentDidMount() {
     this.props.fetchAllFlights();
+
+    database.ref(`flightCards/${this.props.match.params.id}/booked`).on('value', snapshot => {
+      const bookingCount = snapshot.numChildren();
+      this.setState({ bookingCount });
+    })
   }
+
+  handleBookTheFlight = () => {
+    const { id, name } = this.props.userInfo;
+ 
+    database
+      .ref("flightCards")
+      .child(this.props.match.params.id)
+      .child("booked")
+      .child(id)
+      .set(name);
+  };
+
+  handleUnbookTheFlight = () => {
+    const { id, name } = this.props.userInfo;
+
+    database
+      .ref("flightCards")
+      .child(this.props.match.params.id)
+      .child("booked")
+      .child(id)
+      .remove();
+  };
 
   render() {
     const flight = this.props.flights.filter(
@@ -20,7 +52,9 @@ class SingleTripPage extends Component {
     );
 
     const singleFlight = { ...flight[0] };
+
     const {
+      booked,
       title,
       description,
       imageUrl,
@@ -29,6 +63,11 @@ class SingleTripPage extends Component {
       currentBid,
       trip
     } = singleFlight;
+
+    const { bookingCount } = this.state;
+
+    const { id } = this.props.userInfo;
+    const userHasBooked = booked && Object.keys(booked).includes(id);
 
     const nextTier = price + 30;
 
@@ -96,7 +135,7 @@ class SingleTripPage extends Component {
               <div className="detail-board">
                 <p>
                   <span className="detail-board__current-bid">
-                    {currentBid}
+                    {bookingCount + currentBid}
                   </span>{" "}
                   passengers of {totalSeat} goal
                 </p>
@@ -131,9 +170,22 @@ class SingleTripPage extends Component {
                     </a>
                   </div>
                   <div className="book-save-button">
-                    <a className="book-this-flight blue-button">
-                      Book this flight
-                    </a>
+                    {!userHasBooked ? (
+                      <a
+                        className="book-this-flight blue-button"
+                        onClick={this.handleBookTheFlight}
+                      >
+                        Book
+                      </a>
+                    ) : (
+                      <a
+                        className="book-this-flight red-button"
+                        onClick={this.handleUnbookTheFlight}
+                      >
+                        Unbook
+                      </a>
+                    )}
+
                     <a className="save-to-list blue-button">Save to list</a>
                   </div>
                 </div>
@@ -144,16 +196,16 @@ class SingleTripPage extends Component {
           <img className="spinner" src="/images/spinner.svg" />
         )}
         <div className="small-trip-container">
-          {newFlights &&
-            newFlights.map(flight => <ShortTripCard {...flight} />)}
+          {newFlights.map((flight, key) => <ShortTripCard key={key} {...flight} />)}
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ flights }) => ({
-  flights
+const mapStateToProps = ({ flights, userInfo }) => ({
+  flights,
+  userInfo
 });
 
 export default connect(mapStateToProps, { fetchAllFlights })(SingleTripPage);

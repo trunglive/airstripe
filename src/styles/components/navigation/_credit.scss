@@ -1,0 +1,12 @@
+.credit {
+  margin-top: 4rem;
+  text-align: center;
+
+  a {
+    @include small-light-text(1.4rem);
+    display: block;
+    margin-top: 1rem;
+    color: $color-grey-dark-2;
+    text-decoration: none;
+  }
+}
