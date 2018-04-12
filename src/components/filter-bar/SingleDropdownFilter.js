@@ -64,16 +64,14 @@ class DropdownFilter extends Component {
     const value = selectedOption && selectedOption.value;
 
     return (
-      <div>
-        <Select
-          className={`${placeholderTextColor} dropdown-filter`}
-          name="form-field-name"
-          value={value}
-          onChange={this.handleChange}
-          options={selectedValues(this.props.values)}
-          placeholder={placeholder}
-        />
-      </div>
+      <Select
+        className={`${placeholderTextColor} dropdown-filter`}
+        name="form-field-name"
+        value={value}
+        onChange={this.handleChange}
+        options={selectedValues(this.props.values)}
+        placeholder={placeholder}
+      />
     );
   }
 }

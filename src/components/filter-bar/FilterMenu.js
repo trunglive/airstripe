@@ -6,22 +6,42 @@ export default class FilterMenu extends Component {
     return (
       <div className="filter-menu">
         <div className="filter-menu__criteria">
-          <span>Find</span>
-          <SingleDropdownFilter
-            placeholderTextColor={"placeholder-text"}
-            values={["All", "Economy", "Business", "First Class"]}
-            placeholder={"Fare Class"}
-          />
-          <span>sort by</span>
-          <SingleDropdownFilter
-            values={[
-              "Popularity",
-              "Cheapest",
-              "Expiration Date",
-              "Shortest Flight"
-            ]}
-            placeholder={"Popularity"}
-          />
+          <div>
+            <span>Find</span>
+            <SingleDropdownFilter
+              placeholderTextColor={"placeholder-text"}
+              values={["All", "Economy", "Business", "First Class"]}
+              placeholder={"Fare Class"}
+            />
+          </div>
+          <div>
+            <span>Destination</span>
+            <SingleDropdownFilter
+              values={[
+                "Amsterdam",
+                "London",
+                "Florence",
+                "Paris",
+                "Rome",
+                "Seville",
+                "Barcelona",
+                "Milan"
+              ]}
+              placeholder={"All"}
+            />
+          </div>
+          <div>
+            <span>Sort by</span>
+            <SingleDropdownFilter
+              values={[
+                "Popularity",
+                "Cheapest",
+                "Expiration Date",
+                "Shortest Flight"
+              ]}
+              placeholder={"Popularity"}
+            />
+          </div>
         </div>
       </div>
     );

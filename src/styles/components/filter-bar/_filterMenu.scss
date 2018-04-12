@@ -1,9 +1,9 @@
 .filter-menu {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 6rem;
-  padding: 2rem;
+  padding: 1rem;
   font-size: 1.4rem;
   background-color: $color-grey-light-3;
   border: 1px solid $color-grey-light-2;
@@ -14,7 +14,13 @@
     align-items: center;
 
     > div {
-      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      margin: 1rem 2rem;
+
+      > span {
+        margin-right: 2rem;
+      }
     }
   }
 }
