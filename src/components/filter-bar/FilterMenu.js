@@ -15,22 +15,6 @@ export default class FilterMenu extends Component {
             />
           </div>
           <div>
-            <span>Destination</span>
-            <SingleDropdownFilter
-              values={[
-                "Amsterdam",
-                "London",
-                "Florence",
-                "Paris",
-                "Rome",
-                "Seville",
-                "Barcelona",
-                "Milan"
-              ]}
-              placeholder={"All"}
-            />
-          </div>
-          <div>
             <span>Sort by</span>
             <SingleDropdownFilter
               values={[

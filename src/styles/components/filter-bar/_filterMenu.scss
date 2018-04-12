@@ -20,8 +20,24 @@
 
       > span {
         margin-right: 2rem;
+
+        @media only screen and (max-width: $bp-medium) {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      @media only screen and (max-width: $bp-medium) {
+        flex-direction: column;
+      }
+
+      @media only screen and (max-width: $bp-xsmallest) {
+        margin: 0.25rem;
       }
     }
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1rem 0.2rem;
   }
 }
 
