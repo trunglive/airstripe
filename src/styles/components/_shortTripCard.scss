@@ -1,6 +1,5 @@
 .small-trip-container {
   display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
 }
@@ -15,7 +14,7 @@
   }
 
   &__title {
-    margin-top: 0.5rem;
+    margin-top: 2rem;
     font-size: 1.8rem;
     font-weight: 700;
   }

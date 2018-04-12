@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { convertedDate, daysToGo } from '../../utils/convertedTime';
-import { database } from '../../firebase/firebase';
+import { convertedDate, daysToGo } from "../../utils/convertedTime";
+import { database } from "../../firebase/firebase";
 
 export default class TripCard extends Component {
   state = {
     bookingCount: 0
-  }
+  };
 
   componentDidMount() {
-    database.ref(`flightCards/${this.props.id}/booked`).on('value', snapshot => {
-      const bookingCount = snapshot.numChildren();
-      this.setState({ bookingCount });
-    })
+    database
+      .ref(`flightCards/${this.props.id}/booked`)
+      .on("value", snapshot => {
+        const bookingCount = snapshot.numChildren();
+        this.setState({ bookingCount });
+      });
   }
 
   render() {

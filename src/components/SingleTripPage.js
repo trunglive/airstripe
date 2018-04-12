@@ -9,24 +9,27 @@ import {
   expiredDate
 } from "../utils/convertedTime";
 import { randomFourCards } from "../utils/randomFourCards";
+import ModalOpen from "./ModalAlert";
 
 class SingleTripPage extends Component {
   state = {
     bookingCount: 0
-  }
+  };
 
   componentDidMount() {
     this.props.fetchAllFlights();
 
-    database.ref(`flightCards/${this.props.match.params.id}/booked`).on('value', snapshot => {
-      const bookingCount = snapshot.numChildren();
-      this.setState({ bookingCount });
-    })
+    database
+      .ref(`flightCards/${this.props.match.params.id}/booked`)
+      .on("value", snapshot => {
+        const bookingCount = snapshot.numChildren();
+        this.setState({ bookingCount });
+      });
   }
 
   handleBookTheFlight = () => {
     const { id, name } = this.props.userInfo;
- 
+
     database
       .ref("flightCards")
       .child(this.props.match.params.id)
@@ -47,6 +50,8 @@ class SingleTripPage extends Component {
   };
 
   render() {
+    console.log(this.props.userInfo);
+
     const flight = this.props.flights.filter(
       flight => flight.id === this.props.match.params.id
     );
@@ -170,23 +175,27 @@ class SingleTripPage extends Component {
                     </a>
                   </div>
                   <div className="book-save-button">
-                    {!userHasBooked ? (
-                      <a
-                        className="book-this-flight blue-button"
-                        onClick={this.handleBookTheFlight}
-                      >
-                        Book
-                      </a>
+                    {Object.keys(this.props.userInfo).length > 0 ? (
+                      !userHasBooked ? (
+                        <a
+                          className="book-this-flight-auth blue-button"
+                          onClick={this.handleBookTheFlight}
+                        >
+                          Book
+                        </a>
+                      ) : (
+                        <a
+                          className="book-this-flight-auth red-button"
+                          onClick={this.handleUnbookTheFlight}
+                        >
+                          Unbook
+                        </a>
+                      )
                     ) : (
-                      <a
-                        className="book-this-flight red-button"
-                        onClick={this.handleUnbookTheFlight}
-                      >
-                        Unbook
-                      </a>
+                      <ModalOpen />
                     )}
 
-                    <a className="save-to-list blue-button">Save to list</a>
+                    {/* <a className="save-to-list blue-button">Save to list</a> */}
                   </div>
                 </div>
               </div>
@@ -196,7 +205,9 @@ class SingleTripPage extends Component {
           <img className="spinner" src="/images/spinner.svg" />
         )}
         <div className="small-trip-container">
-          {newFlights.map((flight, key) => <ShortTripCard key={key} {...flight} />)}
+          {newFlights.map((flight, key) => (
+            <ShortTripCard key={key} {...flight} />
+          ))}
         </div>
       </div>
     );

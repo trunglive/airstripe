@@ -3,7 +3,7 @@
   grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
   grid-column-gap: 10rem;
   grid-row-gap: 6rem;
-  padding: 8rem 0;
+  padding: $l-size 0 14rem;
 }
 
 .single-trip-intro {
@@ -121,7 +121,7 @@ hr {
   }
 }
 
-.book-this-flight {
+.book-this-flight-auth {
   display: block;
 }
 
@@ -129,3 +129,13 @@ hr {
   display: block;
   margin-top: 1rem;
 }
+
+.ReactModal__Overlay {
+  background-color: antiquewhite;
+}
+
+.sign-in-with-google:hover,
+.close-modal:hover {
+  cursor: pointer;
+}
+

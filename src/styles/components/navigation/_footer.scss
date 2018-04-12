@@ -52,3 +52,14 @@
     @include small-light-text(1.4rem);
   }
 }
+
+.footer-hr {
+  display: block;
+  margin-top: $l-size;
+  border: 0;
+  border-top: 1px solid rgba($color-grey-dark-2, 0.3);
+
+  @media only screen and (max-width: 51.25em) {
+    display: none;
+  }
+}

@@ -14,8 +14,7 @@ class Header extends Component {
       this.setState({
         currentUser
       });
-      // console.log(currentUser.uid);
-      // console.log(currentUser.displayName);
+
       currentUser && this.props.addUserInfo({id: currentUser.uid, name: currentUser.displayName});
     });
   }
@@ -27,7 +26,7 @@ class Header extends Component {
 
   render() {
     const { currentUser } = this.state;
-    // console.log(currentUser);
+
     return (
       <header className="header">
         <Link className="logo-link" to="/">
