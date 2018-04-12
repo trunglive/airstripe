@@ -16,7 +16,6 @@
 
 .header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
@@ -33,26 +32,34 @@
   &__flights,
   &__how-it-works,
   &__login,
-  &__logout,
   &__logout-text {
-    padding-left: 3rem;
+    padding: 0 2rem;
     color: inherit;
     font-size: 1.4rem;
     text-decoration: none;
     letter-spacing: 0.4px;
 
-    @media only screen and (max-width: $bp-medium) {
-      margin-top: 2rem;
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 1rem;
     }
   }
 
   &__logout {
     display: flex;
     align-items: center;
+    padding-left: 1rem;
   }
 
   &__logout-text {
-    margin-left: -2rem;
+    margin-left: -1rem;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-left: -0.5rem;
+    }
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-top: 3rem;
   }
 }
 

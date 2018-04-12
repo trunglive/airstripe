@@ -1,7 +1,8 @@
 .small-trip-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 6rem;
 }
 
 .small-trip-card {

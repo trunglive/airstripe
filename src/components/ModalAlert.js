@@ -22,6 +22,7 @@ class ModalAlert extends Component {
           Book
         </a>
         <Modal
+
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={modalStyles}

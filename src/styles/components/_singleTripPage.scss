@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
   grid-column-gap: 10rem;
-  grid-row-gap: 6rem;
-  padding: $l-size 0 14rem;
+  grid-row-gap: 2rem;
+  padding: $l-size 0 12rem;
 }
 
 .single-trip-intro {
@@ -12,11 +12,19 @@
   &__title {
     font-size: 3.4rem;
     font-weight: 700;
+
+    @media only screen and (max-width: $bp-large) {
+      text-align: center;
+    }
   }
 
   &__description {
     padding: 2rem 0;
     color: $color-grey-dark-1;
+
+    @media only screen and (max-width: $bp-large) {
+      text-align: center;
+    }
   }
 
   &__image {
@@ -24,6 +32,10 @@
     width: 120%;
     height: 350px;
     object-fit: cover;
+
+    @media only screen and (max-width: $bp-large) {
+      width: 100%;
+    }
   }
 }
 
@@ -32,6 +44,10 @@
   justify-self: end;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: $bp-large) {
+    width: 100%;
+  }
 }
 
 .single-trip {
@@ -109,7 +125,12 @@ hr {
       margin-right: 1.5rem;
     }
   }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 0 2rem;
+  }
 }
+
 .menu-toggle {
   border: 2px solid red;
 }
@@ -134,4 +155,3 @@ hr {
 .close-modal:hover {
   cursor: pointer;
 }
-
