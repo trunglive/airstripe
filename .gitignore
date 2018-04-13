@@ -1,8 +1,5 @@
 node_modules
 dev-off
+public/dist/
 src/firebase/config.js
 src/firebase/defaultData.js
-public/bundle.js
-public/bundle.js.map
-public/styles.css
-public/styles.css.map
