@@ -51,7 +51,7 @@ class Header extends Component {
             activeStyle={{
               color: "#1A81F3"
             }}
-            to="/how-it-works"
+            to="#"
           >
             How It Works
           </NavLink>
