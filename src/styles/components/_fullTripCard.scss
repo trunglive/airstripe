@@ -18,6 +18,7 @@
 
 .trip-card {
   position: relative;
+  
   &__image {
     display: block;
     width: 100%;
@@ -66,6 +67,7 @@
 
   &__origin {
     div:first-child {
+      margin-bottom: 0.5rem;
       font-size: 1.4rem;
     }
 
@@ -78,6 +80,7 @@
     justify-self: center;
 
     div:first-child {
+      margin-bottom: 0.5rem;
       font-size: 1.4rem;
     }
 
