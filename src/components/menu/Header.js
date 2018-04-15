@@ -40,20 +40,19 @@ class Header extends Component {
           </div>
         </Link>
         <div className="nav-icon-group">
-          <NavLink
-            className="nav-icon-group__flights"
-            to="/"
-            exact={true}
-          >
+          <NavLink className="nav-icon-group__flights" to="/" exact={true}>
             Flights
           </NavLink>
-          <NavLink
-            className="nav-icon-group__my-list"
-            to="/mylist"
-            exact={true}
-          >
-            Saved
-          </NavLink>
+          {currentUser && (
+            <NavLink
+              className="nav-icon-group__my-list"
+              to="/mylist"
+              exact={true}
+            >
+              Saved
+            </NavLink>
+          )}
+
           {!currentUser ? (
             <NavLink
               className="nav-icon-group__login"
