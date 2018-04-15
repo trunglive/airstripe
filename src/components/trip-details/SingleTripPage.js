@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ShortTripCard from "./trip-cards/ShortTripCard";
-import { fetchAllFlights } from "../actions/flightsActions";
-import { database } from "../firebase/firebase";
+import SmallTripContainer from "./SmallTripContainer";
+import { fetchAllFlights } from "../../actions/flightsActions";
+import { database } from "../../firebase/firebase";
 import {
   convertedDateAndHour,
   daysToGo,
   expiredDate
-} from "../utils/convertedTime";
-import { randomFourCards } from "../utils/randomFourCards";
-import ModalOpen from "./ModalAlert";
+} from "../../utils/convertedTime";
+import ModalOpen from "../modal/ModalAlert";
 
 class SingleTripPage extends Component {
   state = {
@@ -49,9 +48,29 @@ class SingleTripPage extends Component {
       .remove();
   };
 
-  render() {
-    console.log(this.props.userInfo);
+  handleSaveToList = () => {
+    const { id, name } = this.props.userInfo;
 
+    database
+      .ref("flightCards")
+      .child(this.props.match.params.id)
+      .child("saved")
+      .child(id)
+      .set(name);
+  };
+
+  handleUnsaveToList = () => {
+    const { id, name } = this.props.userInfo;
+
+    database
+      .ref("flightCards")
+      .child(this.props.match.params.id)
+      .child("saved")
+      .child(id)
+      .remove();
+  };
+
+  render() {
     const flight = this.props.flights.filter(
       flight => flight.id === this.props.match.params.id
     );
@@ -60,6 +79,7 @@ class SingleTripPage extends Component {
 
     const {
       booked,
+      saved,
       title,
       description,
       imageUrl,
@@ -73,14 +93,9 @@ class SingleTripPage extends Component {
 
     const { id } = this.props.userInfo;
     const userHasBooked = booked && Object.keys(booked).includes(id);
+    const userHasSaved = saved && Object.keys(saved).includes(id);
 
     const nextTier = price + 30;
-
-    const newFlights = randomFourCards(
-      this.props.flights,
-      this.props.match.params.id
-    );
-
     return (
       <div>
         {Object.keys(singleFlight).length > 0 ? (
@@ -181,21 +196,39 @@ class SingleTripPage extends Component {
                           className="book-this-flight-auth blue-button"
                           onClick={this.handleBookTheFlight}
                         >
-                          Book
+                          Book Flight
                         </a>
                       ) : (
                         <a
                           className="book-this-flight-auth red-button"
                           onClick={this.handleUnbookTheFlight}
                         >
-                          Unbook
+                          Unbook Flight
                         </a>
                       )
                     ) : (
                       <ModalOpen />
                     )}
 
-                    {/* <a className="save-to-list blue-button">Save to list</a> */}
+                    {Object.keys(this.props.userInfo).length > 0 ? (
+                      !userHasSaved ? (
+                        <a
+                        className="save-to-list blue-button"
+                        onClick={this.handleSaveToList}
+                        >
+                          Save to List
+                        </a>
+                      ) : (
+                        <a
+                        className="save-to-list red-button"
+                        onClick={this.handleUnsaveToList}
+                        >
+                          Unsave to List
+                        </a>
+                      )
+                    ) : (
+                      <ModalOpen />
+                    )}
                   </div>
                 </div>
               </div>
@@ -204,11 +237,10 @@ class SingleTripPage extends Component {
         ) : (
           <img className="spinner" src="/images/spinner.svg" />
         )}
-        <div className="small-trip-container">
-          {newFlights.map((flight, key) => (
-            <ShortTripCard key={key} {...flight} />
-          ))}
-        </div>
+        <SmallTripContainer
+          flights={this.props.flights}
+          id={this.props.match.params.id}
+        />
       </div>
     );
   }

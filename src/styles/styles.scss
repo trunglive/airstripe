@@ -7,9 +7,9 @@
 @import './components/filter-bar/filterMenu';
 @import './components/filter-bar/singleDropdownFilter';
 
-@import './components/fullTripCard';
-@import './components/shortTripCard';
-@import './components/singleTripPage';
+@import './components/trip-details/fullTripCard';
+@import './components/trip-details/shortTripCard';
+@import './components/trip-details/singleTripPage';
 
 @import './components/navigation/footer';
 @import './components/navigation/credit';

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { auth, googleAuthProvider } from "../firebase/firebase";
+import { auth, googleAuthProvider } from "../../firebase/firebase";
 import Modal from "react-modal";
 
 class ModalAlert extends Component {

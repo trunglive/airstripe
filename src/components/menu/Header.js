@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { Link, NavLink, Router } from "react-router-dom";
 import { auth, googleAuthProvider } from "../../firebase/firebase";
 import { addUserInfo } from "../../actions/userInfoActions";
@@ -15,7 +15,11 @@ class Header extends Component {
         currentUser
       });
 
-      currentUser && this.props.addUserInfo({id: currentUser.uid, name: currentUser.displayName});
+      currentUser &&
+        this.props.addUserInfo({
+          id: currentUser.uid,
+          name: currentUser.displayName
+        });
     });
   }
 
@@ -51,9 +55,9 @@ class Header extends Component {
             activeStyle={{
               color: "#1A81F3"
             }}
-            to="#"
+            to="/mylist"
           >
-            How It Works
+            Saved
           </NavLink>
           {!currentUser ? (
             <NavLink
@@ -86,6 +90,6 @@ class Header extends Component {
 
 const mapStateToProps = ({ userInfo }) => ({
   userInfo
-})
+});
 
 export default connect(mapStateToProps, { addUserInfo })(Header);
