@@ -51,11 +51,12 @@ class Header extends Component {
             Flights
           </NavLink>
           <NavLink
-            className="nav-icon-group__how-it-works"
+            className="nav-icon-group__my-list"
             activeStyle={{
               color: "#1A81F3"
             }}
             to="/mylist"
+            exact={true}
           >
             Saved
           </NavLink>
