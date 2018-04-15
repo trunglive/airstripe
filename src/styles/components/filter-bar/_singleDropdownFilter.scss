@@ -1,5 +1,5 @@
 .dropdown-filter {
-  width: 15rem;
+  width: 16rem;
 
   .Select-placeholder {
     color: $color-secondary;
@@ -7,7 +7,7 @@
   }
 
   .Select-control {
-    border: none;
+    border: 1px solid $color-grey-light-1;
   }
 }
 
