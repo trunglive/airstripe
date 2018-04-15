@@ -191,41 +191,42 @@ class SingleTripPage extends Component {
                   </div>
                   <div className="book-save-button">
                     {Object.keys(this.props.userInfo).length > 0 ? (
-                      !userHasBooked ? (
-                        <a
-                          className="book-this-flight-auth blue-button"
-                          onClick={this.handleBookTheFlight}
-                        >
-                          Book Flight
-                        </a>
-                      ) : (
-                        <a
-                          className="book-this-flight-auth red-button"
-                          onClick={this.handleUnbookTheFlight}
-                        >
-                          Unbook Flight
-                        </a>
-                      )
-                    ) : (
-                      <ModalOpen />
-                    )}
-
-                    {Object.keys(this.props.userInfo).length > 0 ? (
-                      !userHasSaved ? (
-                        <a
-                        className="save-to-list blue-button"
-                        onClick={this.handleSaveToList}
-                        >
-                          Save to List
-                        </a>
-                      ) : (
-                        <a
-                        className="save-to-list red-button"
-                        onClick={this.handleUnsaveToList}
-                        >
-                          Unsave to List
-                        </a>
-                      )
+                      <div>
+                        <div>
+                          {!userHasBooked ? (
+                            <a
+                              className="book-this-flight-auth blue-button"
+                              onClick={this.handleBookTheFlight}
+                            >
+                              Book Flight
+                            </a>
+                          ) : (
+                            <a
+                              className="book-this-flight-auth red-button"
+                              onClick={this.handleUnbookTheFlight}
+                            >
+                              Unbook Flight
+                            </a>
+                          )}
+                        </div>
+                        <div>
+                          {!userHasSaved ? (
+                            <a
+                              className="save-to-list blue-button"
+                              onClick={this.handleSaveToList}
+                            >
+                              Save to List
+                            </a>
+                          ) : (
+                            <a
+                              className="save-to-list red-button"
+                              onClick={this.handleUnsaveToList}
+                            >
+                              Unsave to List
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     ) : (
                       <ModalOpen />
                     )}

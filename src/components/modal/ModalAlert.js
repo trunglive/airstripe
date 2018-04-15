@@ -18,11 +18,19 @@ class ModalAlert extends Component {
   render() {
     return (
       <div className="modal book-this-flight-unauth">
-        <a className="book-this-flight blue-button" onClick={this.openModal}>
-          Book
-        </a>
+        <div
+          className="book-this-flight blue-button"
+          style={{
+            marginBottom: "10px"
+          }}
+          onClick={this.openModal}
+        >
+          Book Flight
+        </div>
+        <div className="book-this-flight blue-button" onClick={this.openModal}>
+          Save to List
+        </div>
         <Modal
-
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={modalStyles}
