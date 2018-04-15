@@ -1,7 +1,7 @@
 .wishlist-page {
   display: flex;
   flex-direction: column;
-  padding: $l-size 0 12rem;
+  padding: $l-size 0 $s-size;
 }
 
 .wishlist-container {
@@ -17,20 +17,34 @@
 
 .wishlist {
   &__title {
-    font-size: 3.4rem;
-    font-weight: 700;
-
-    @media only screen and (max-width: $bp-large) {
-      text-align: center;
-    }
+    @include title;
   }
 
   &__description {
-    padding: 2rem 0;
-    color: $color-grey-dark-1;
+    @include description;
+  }
+}
 
-    @media only screen and (max-width: $bp-large) {
-      text-align: center;
-    }
+.no-item-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem;
+  font-family: $font-secondary;
+  font-size: 4rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-direction: column-reverse;
+    text-align: center;
+    font-size: 3rem;
+  }
+}
+
+.no-item-found {
+  width: 30rem;
+  height: 30rem;
+
+  @media only screen and (max-width: $bp-smallest) {
+    margin-bottom: 3rem;
   }
 }

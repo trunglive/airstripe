@@ -41,19 +41,6 @@
   }
 }
 
-@mixin button($bg-color: $color-primary) {
-  width: 14rem;
-  padding: 1rem 2rem;
-  color: $color-grey-light-3;
-  background-color: $bg-color;
-  border-radius: 3px;
-  text-align: center;
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 .blue-button {
   @include button;
 }

@@ -1,6 +1,8 @@
 @import './base/settings';
 @import './base/base';
 
+@import './components/mixin/mixin';
+
 @import './components/navigation/header';
 @import './components/homepage';
 

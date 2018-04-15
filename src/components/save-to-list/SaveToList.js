@@ -19,9 +19,6 @@ class SaveToList extends Component {
   }
 
   render() {
-    // console.log(this.props.flights);
-    // console.log(this.props.userInfo);
-    // console.log(this.state.userList);
     const { wishlist } = this.state;
 
     return (
@@ -30,9 +27,17 @@ class SaveToList extends Component {
           <p className="wishlist__title">List</p>
           <p className="wishlist__description">Your saved trips</p>
         </div>
-        <div className="wishlist-container">
-          {wishlist && wishlist.map(item => <ShortTripCard {...item} />)}
-        </div>
+
+        {wishlist.length > 0 ? (
+          <div className="wishlist-container">
+            {wishlist.map(item => <ShortTripCard {...item} />)}
+          </div>
+        ) : (
+          <div className="no-item-found-container">
+            <p>No trips found in your list</p>
+            <img className="no-item-found" src="/icons/no-item-found.svg" />
+          </div>
+        )}
       </div>
     );
   }

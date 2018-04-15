@@ -42,9 +42,6 @@ class Header extends Component {
         <div className="nav-icon-group">
           <NavLink
             className="nav-icon-group__flights"
-            activeStyle={{
-              color: "#1A81F3"
-            }}
             to="/"
             exact={true}
           >
@@ -52,9 +49,6 @@ class Header extends Component {
           </NavLink>
           <NavLink
             className="nav-icon-group__my-list"
-            activeStyle={{
-              color: "#1A81F3"
-            }}
             to="/mylist"
             exact={true}
           >
@@ -63,9 +57,6 @@ class Header extends Component {
           {!currentUser ? (
             <NavLink
               className="nav-icon-group__login"
-              activeStyle={{
-                color: "#1A81F3"
-              }}
               to="#"
               onClick={() => auth.signInWithPopup(googleAuthProvider)}
             >

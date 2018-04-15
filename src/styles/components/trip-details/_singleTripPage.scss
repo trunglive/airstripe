@@ -10,21 +10,11 @@
   grid-column: 1 / -1;
 
   &__title {
-    font-size: 3.4rem;
-    font-weight: 700;
-
-    @media only screen and (max-width: $bp-large) {
-      text-align: center;
-    }
+    @include title;
   }
 
   &__description {
-    padding: 2rem 0;
-    color: $color-grey-dark-1;
-
-    @media only screen and (max-width: $bp-large) {
-      text-align: center;
-    }
+    @include description;
   }
 
   &__image {

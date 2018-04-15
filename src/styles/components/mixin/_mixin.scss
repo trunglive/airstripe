@@ -1,0 +1,35 @@
+@mixin small-light-text($font-size: 1.2rem) {
+  color: $color-grey-dark-1;
+  font-size: $font-size;
+}
+
+@mixin title {
+  font-size: 3.4rem;
+  font-weight: 700;
+
+  @media only screen and (max-width: $bp-large) {
+    text-align: center;
+  }
+}
+
+@mixin description {
+  padding: 2rem 0;
+  color: $color-grey-dark-1;
+
+  @media only screen and (max-width: $bp-large) {
+    text-align: center;
+  }
+}
+
+@mixin button($bg-color: $color-primary) {
+  width: 14rem;
+  padding: 1rem 2rem;
+  color: $color-grey-light-3;
+  background-color: $bg-color;
+  border-radius: 3px;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
