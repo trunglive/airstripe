@@ -2,7 +2,7 @@
 
 ## Airstripe
 
-> Airstripe is a demo app for crowdfunding flights. This is my attempt to create an interactive CRUD app using React for UI, Redux for global state management and Firebase for backend API.
+> Airstripe is a demo app for crowdfunding flights. It is an interactive CRUD app using React for UI, Redux for global state management, Firebase for authentication and data API.
 
 ### Demo
 
