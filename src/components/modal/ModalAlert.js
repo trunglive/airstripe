@@ -34,43 +34,23 @@ class ModalAlert extends Component {
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={modalStyles}
+          className="modal-container"
           contentLabel="Modal for Book Flight"
         >
           <img
             className="close-modal"
-            style={{ width: "20px", height: "20px" }}
             src="/icons/close.svg"
             onClick={this.closeModal}
           />
-          <h2 style={{ marginTop: "20px", marginBottom: "30px" }}>
-            Book this flight
-          </h2>
-          <div style={signInWithGoogle}>
-            <img
-              style={{
-                width: "20px",
-                height: "20px",
-                marginRight: "10px"
-              }}
-              src="/icons/google.svg"
-            />
-            <h3
-              className="sign-in-with-google"
-              onClick={() => auth.signInWithPopup(googleAuthProvider)}
-            >
+          <h2 className="book-this-flight">Book this flight</h2>
+          <div className="sign-in-with-google">
+            <img className="sign-in-google-icon" src="/icons/google.svg" />
+            <h3 onClick={() => auth.signInWithPopup(googleAuthProvider)}>
               Sign in with Google Account
             </h3>
           </div>
-          <div style={modalHr} />
-          <p
-            style={{
-              marginTop: "20px",
-              fontWeight: "300",
-              textAlign: "center"
-            }}
-          >
-            Already have a Google account?
-          </p>
+          <div className="modal-hr" />
+          <p className="modal-question">Already have a Google account?</p>
         </Modal>
       </div>
     );
@@ -80,38 +60,10 @@ class ModalAlert extends Component {
 export default ModalAlert;
 
 const modalStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    padding: "30px",
-    transform: "translate(-50%, -50%)",
-    width: "500px",
-    height: "300px",
-    letterSpacing: "0.5px",
-    border: "none",
-    borderRadius: "0"
-  },
   overlay: {
     backgroundColor: "rgba(54, 54, 54, 0.8)"
+  },
+  content: {
+    outline: "none"
   }
-};
-
-const signInWithGoogle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  padding: "12px",
-  textAlign: "center",
-  border: "2px solid rgba(54, 54, 54, 0.7)",
-  borderRadius: "4px"
-};
-
-const modalHr = {
-  display: "block",
-  marginTop: "40px",
-  border: "0",
-  borderTop: "1px solid rgba(175, 188, 204, 0.5)"
 };
