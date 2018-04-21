@@ -42,7 +42,8 @@ class ModalAlert extends Component {
             src="/icons/close.svg"
             onClick={this.closeModal}
           />
-          <h2 className="book-this-flight">Book this flight</h2>
+          <div className="modal-content">
+            <h2 className="book-this-flight">Book this flight</h2>
           <div className="sign-in-with-google">
             <img className="sign-in-google-icon" src="/icons/google.svg" />
             <h3 onClick={() => auth.signInWithPopup(googleAuthProvider)}>
@@ -51,6 +52,8 @@ class ModalAlert extends Component {
           </div>
           <div className="modal-hr" />
           <p className="modal-question">Already have a Google account?</p>
+          </div>
+          
         </Modal>
       </div>
     );
@@ -62,8 +65,5 @@ export default ModalAlert;
 const modalStyles = {
   overlay: {
     backgroundColor: "rgba(54, 54, 54, 0.8)"
-  },
-  content: {
-    outline: "none"
   }
 };
