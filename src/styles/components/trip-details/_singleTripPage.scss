@@ -1,7 +1,7 @@
 .single-trip-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  grid-column-gap: 10rem;
+  grid-column-gap: 12rem;
   grid-row-gap: 2rem;
   padding: $l-size 0 12rem;
 }
@@ -31,12 +31,18 @@
 
 .all-flight-details {
   width: 80%;
+  grid-column: 2 / -1;
   justify-self: end;
   display: flex;
   flex-direction: column;
 
-  @media only screen and (max-width: $bp-large) {
+  @media only screen and (max-width: $bp-largest) {
     width: 100%;
+    grid-column: auto;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-column: auto;
   }
 }
 
