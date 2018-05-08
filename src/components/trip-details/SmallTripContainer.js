@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import ShortTripCard from "./ShortTripCard";
 import { randomFourCards } from "../../utils/randomFourCards";
 

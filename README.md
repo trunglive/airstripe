@@ -1,16 +1,18 @@
-## **Design credit of the project: [Mário Rodrigues](https://dribbble.com/shots/4011619-Airstripe-Web-App/attachments/923310)**
+#### Design credit of the project: Mário Rodrigues
+* https://dribbble.com/shots/4011619-Airstripe-Web-App
+* https://dribbble.com/shots/4197632-Airstripe-Flight-Page
 
-## Airstripe
+#### Airstripe
 
 > Airstripe is a demo app for crowdfunding flights. It is an interactive CRUD app using React for UI, Redux for global state management, Firebase for authentication and data API.
 
-### Demo
+#### Demo
 
 https://airstripe-dev.firebaseapp.com
 
 ![airstripe](airstripe-demo.jpg)
 
-## Stack
+#### Stack
 
 * [React](https://github.com/facebook/react)
 * [React Router](https://github.com/ReactTraining/react-router)
@@ -18,7 +20,7 @@ https://airstripe-dev.firebaseapp.com
 * [Redux Thunk](https://github.com/gaearon/redux-thunk)
 * [Firebase](https://firebase.google.com/)
 
-### Quick Start
+#### Quick Start
 
 **Clone the project**
 
@@ -34,10 +36,10 @@ $ yarn install
 $ yarn start
 ```
 
-### Contributor
+#### Contributor
 
 Trung Vo ([trunglive](https://github.com/trunglive))
 
-### License
+#### License
 
 This project is licensed under the MIT License. Please check the `LICENSE` file.

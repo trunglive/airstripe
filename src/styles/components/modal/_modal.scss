@@ -2,12 +2,12 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  padding: 3rem;
   transform: translate(-50%, -50%);
   width: 50rem;
   height: 30rem;
-  background-color: #fff;
+  padding: 3rem;
   letter-spacing: 0.5px;
+  background-color: #fff;
   border: none;
   border-radius: 0;
   outline: none;
@@ -49,8 +49,8 @@
 
 .sign-in-with-google {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: 1.2rem;
   text-align: center;
   border: 2px solid rgba($color-secondary, 0.7);

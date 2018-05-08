@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import { fetchAllFlights } from "../../actions/flightsActions";
 import ShortTripCard from "../trip-details/ShortTripCard";
 
@@ -35,7 +36,10 @@ class SaveToList extends Component {
         ) : (
           <div className="no-item-found-container">
             <p>No trips found in your list</p>
-            <img className="no-item-found" src="/icons/no-item-found.svg" />
+            <img
+              className="no-item-found"
+              src="/icons/main/no-item-found.svg"
+            />
           </div>
         )}
       </div>

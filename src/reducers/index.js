@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
+
 import flights from "./flightsReducer";
 import finding from "./fareClassReducer";
 import sorting from "./sortingReducer";
-import userInfo from './userInfoReducer';
+import userInfo from "./userInfoReducer";
 
 const rootReducer = combineReducers({
   flights,

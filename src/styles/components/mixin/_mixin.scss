@@ -25,10 +25,10 @@
   width: 14rem;
   padding: 1.25rem 2rem;
   color: $color-grey-light-3;
+  text-align: center;
   background-color: $bg-color;
   border-radius: 3px;
-  text-align: center;
-
+  
   &:hover {
     cursor: pointer;
   }

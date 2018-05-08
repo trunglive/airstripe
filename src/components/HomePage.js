@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAllFlights } from "../actions/flightsActions";
+
 import FilterMenu from "./filter-bar/FilterMenu";
 import FullTripCard from "./trip-details/FullTripCard";
+import { auth } from "../firebase/firebase";
+import { fetchAllFlights } from "../actions/flightsActions";
 import { FlightSelectors } from "../selectors/FlightSelectors";
-import { auth } from '../firebase/firebase';
 
 class HomePage extends Component {
   componentDidMount() {

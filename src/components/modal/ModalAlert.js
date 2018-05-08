@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { auth, googleAuthProvider } from "../../firebase/firebase";
 import Modal from "react-modal";
+
+import { auth, googleAuthProvider } from "../../firebase/firebase";
 
 class ModalAlert extends Component {
   state = {
@@ -39,21 +40,23 @@ class ModalAlert extends Component {
         >
           <img
             className="close-modal"
-            src="/icons/close.svg"
+            src="/icons/main/close.svg"
             onClick={this.closeModal}
           />
           <div className="modal-content">
             <h2 className="book-this-flight">Book this flight</h2>
-          <div className="sign-in-with-google">
-            <img className="sign-in-google-icon" src="/icons/google.svg" />
-            <h3 onClick={() => auth.signInWithPopup(googleAuthProvider)}>
-              Sign in with Google Account
-            </h3>
+            <div className="sign-in-with-google">
+              <img
+                className="sign-in-google-icon"
+                src="/icons/main/google.svg"
+              />
+              <h3 onClick={() => auth.signInWithPopup(googleAuthProvider)}>
+                Sign in with Google Account
+              </h3>
+            </div>
+            <div className="modal-hr" />
+            <p className="modal-question">Already have a Google account?</p>
           </div>
-          <div className="modal-hr" />
-          <p className="modal-question">Already have a Google account?</p>
-          </div>
-          
         </Modal>
       </div>
     );

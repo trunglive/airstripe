@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { convertedDate, daysToGo } from "../../utils/convertedTime";
+
 import { database } from "../../firebase/firebase";
+import { convertedDate, daysToGo } from "../../utils/convertedTime";
 
 export default class TripCard extends Component {
   state = {
@@ -59,7 +60,7 @@ export default class TripCard extends Component {
             </div>
             <img
               className="flight-info__airplane-icon"
-              src="/icons/airplane-depart.svg"
+              src="/icons/main/airplane-depart.svg"
             />
             <div className="flight-info__destination">
               <div>{trip.returning.destinationCode}</div>

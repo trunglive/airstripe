@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, NavLink, Router } from "react-router-dom";
+
 import { auth, googleAuthProvider } from "../../firebase/firebase";
 import { addUserInfo } from "../../actions/userInfoActions";
 
@@ -35,7 +36,7 @@ class Header extends Component {
       <header className="header">
         <Link className="logo-link" to="/">
           <div className="logo-group">
-            <img className="logo-icon" src="/icons/logo.svg" />
+            <img className="logo-icon" src="/icons/main/logo.svg" />
             <span className="brand-name">airstripe</span>
           </div>
         </Link>
@@ -63,7 +64,7 @@ class Header extends Component {
             </NavLink>
           ) : (
             <div className="nav-icon-group__logout">
-              <img className="login-icon" src="/icons/login.svg" />
+              <img className="login-icon" src="/icons/main/login.svg" />
               <Link
                 className="nav-icon-group__logout-text"
                 to="/"

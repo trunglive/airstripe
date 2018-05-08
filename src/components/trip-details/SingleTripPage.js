@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 import SmallTripContainer from "./SmallTripContainer";
-import { fetchAllFlights } from "../../actions/flightsActions";
 import { database } from "../../firebase/firebase";
+import { fetchAllFlights } from "../../actions/flightsActions";
+import ModalOpen from "../modal/ModalAlert";
 import {
   convertedDateAndHour,
   daysToGo,
   expiredDate
 } from "../../utils/convertedTime";
-import ModalOpen from "../modal/ModalAlert";
 
 class SingleTripPage extends Component {
   state = {
@@ -120,7 +121,7 @@ class SingleTripPage extends Component {
                 </div>
                 <img
                   className="single-trip__airplane-icon"
-                  src="/icons/airplane-depart.svg"
+                  src="/icons/main/airplane-depart.svg"
                 />
                 <div className="schedule-board__destination">
                   <div>{`${trip.returning.destinationPoint} (${
@@ -141,7 +142,7 @@ class SingleTripPage extends Component {
                 </div>
                 <img
                   className="single-trip__airplane-icon icon-reverse"
-                  src="/icons/airplane-depart.svg"
+                  src="/icons/main/airplane-depart.svg"
                 />
                 <div className="schedule-board__destination">
                   <div>{`${trip.departing.originPoint} (${
@@ -177,16 +178,16 @@ class SingleTripPage extends Component {
                 <div className="detail-board__icon-and-button">
                   <div className="icon-light-group">
                     <a href="https://www.facebook.com" target="_blank">
-                      <img src="/icons/icon-light/facebook-light.svg" />
+                      <img src="/icons/social-light/facebook-light.svg" />
                     </a>
                     <a
                       href={`https://twitter.com/intent/tweet?text=${title}. ${description}.`}
                       target="_blank"
                     >
-                      <img src="/icons/icon-light/twitter-light.svg" />
+                      <img src="/icons/social-light/twitter-light.svg" />
                     </a>
                     <a href={`mailto:?subject=${title}`}>
-                      <img src="/icons/icon-light/mail-light.svg" />
+                      <img src="/icons/social-light/mail-light.svg" />
                     </a>
                   </div>
                   <div className="book-save-button">

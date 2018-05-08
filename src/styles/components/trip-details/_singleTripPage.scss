@@ -30,11 +30,11 @@
 }
 
 .all-flight-details {
-  width: 80%;
   grid-column: 2 / -1;
-  justify-self: end;
   display: flex;
   flex-direction: column;
+  justify-self: end;
+  width: 80%;
 
   @media only screen and (max-width: $bp-largest) {
     width: 100%;
@@ -59,8 +59,8 @@
       1fr
     );
   grid-gap: 2rem;
-  padding: 2rem;
   margin-bottom: 2rem;
+  padding: 2rem;
   background-color: $color-grey-light-4;
   border: 1px solid rgba($color-grey-dark-2, 0.3);
   border-radius: 3px;
@@ -84,9 +84,9 @@ hr {
 
 @mixin big-number($color: $color-primary) {
   padding-right: 0.5rem;
-  color: $color;
   font-size: 2.2rem;
   font-weight: 700;
+  color: $color;
 }
 
 .detail-board {
@@ -95,6 +95,7 @@ hr {
   > p {
     margin-top: 1.5rem;
   }
+
   &__current-bid {
     @include big-number;
   }

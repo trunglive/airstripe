@@ -26,16 +26,16 @@
 
 .nav-icon-group {
   display: flex;
-  align-items: center;
   justify-content: space-around;
+  align-items: center;
 
   &__flights,
   &__my-list,
   &__login,
   &__logout-text {
     padding: 0 2rem;
-    color: inherit;
     font-size: 1.4rem;
+    color: inherit;
     text-decoration: none;
     letter-spacing: 0.4px;
 

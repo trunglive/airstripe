@@ -12,7 +12,7 @@ const Footer = () => (
         exact={true}
       >
         <div className="logo-group">
-          <img className="logo-icon" src="/icons/logo.svg" />
+          <img className="logo-icon" src="/icons/main/logo.svg" />
           <span className="brand-name">airstripe</span>
         </div>
 
@@ -21,16 +21,16 @@ const Footer = () => (
       <div className="social-and-lang-group">
         <span className="social-icon">
           <a href="https://www.facebook.com" target="_blank">
-            <img src="/icons/icon-dark/facebook-dark.svg" />
+            <img src="/icons/social-dark/facebook-dark.svg" />
           </a>
           <a href="https://www.twitter.com" target="_blank">
-            <img src="/icons/icon-dark/twitter-dark.svg" />
+            <img src="/icons/social-dark/twitter-dark.svg" />
           </a>
           <a href="https://www.instagram.com" target="_blank">
-            <img src="/icons/icon-dark/instagram-dark.svg" />
+            <img src="/icons/social-dark/instagram-dark.svg" />
           </a>
           <a href="https://www.medium.com" target="_blank">
-            <img src="/icons/icon-dark/medium-dark.svg" />
+            <img src="/icons/social-dark/medium-dark.svg" />
           </a>
         </span>
         <span className="lang">
